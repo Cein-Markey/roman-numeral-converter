@@ -25,6 +25,77 @@ var RomanForm = React.createClass({
     },
 
     /**
+     * `setIntegerConversion` handles this.state for
+     *  converting roman numerals to integers
+     *
+     *  @param  {event} event Used in this
+     *  instance to target element values
+     */
+    setRomanConversion: function(event) {
+        var reg = new RegExp('^[iIvVxXlLcCdDmM]+$|^$');
+
+        if (reg.test(event.target.value)) {
+            this.setState({
+                showWarning: false
+            });
+
+            var result = '';
+            if (event.target.value !== '') {
+                var result = Roman.getIntegerToRoman(
+                    event.target.value.toUpperCase()
+                );
+            }
+
+            if (result > 3999) {
+                this.setState({
+                    showWarning: 'roman'
+                });
+            } else {
+                this.setState({
+                    result,
+                    userInput: event.target.value.toUpperCase()
+                });
+            }
+        } else {
+            this.setState({
+                showWarning: 'roman'
+            });
+        }
+    },
+
+    /**
+     * `setIntegerConversion` handles this.state for
+     *  converting integers to roman numerals
+     *
+     *  @param  {event} event Used in this
+     *  instance to target element values
+     */
+    setIntegerConversion: function(event) {
+        var reg = new RegExp('^[0-9]+$|^$');
+
+        if (reg.test(event.target.value)
+            && event.target.value <= 3999
+        ) {
+            var result = '';
+            if (event.target.value !== '') {
+                var result = Roman.getRomanToInteger(
+                    event.target.value
+                );
+            }
+
+            this.setState({
+                result,
+                userInput: event.target.value,
+                showWarning: false
+            });
+        } else {
+            this.setState({
+                showWarning: 'integer'
+            });
+        }
+    },
+
+    /**
      * `handleInput` will handle the users selection
      *  of roman numeral or integer, and give an
      *  output using the `Roman` library limited
@@ -34,60 +105,10 @@ var RomanForm = React.createClass({
      *  instance to target element values
      */
     handleInput: function(event) {
-
         if (this.state.selection === 'integer') {
-            var reg = new RegExp('^[0-9]+$|^$');
-
-            if (reg.test(event.target.value)
-                && event.target.value <= 3999
-            ) {
-                var result = '';
-                if (event.target.value !== '') {
-                    var result = Roman.getRomanToInteger(
-                        event.target.value
-                    );
-                }
-
-                this.setState({
-                    result,
-                    userInput: event.target.value,
-                    showWarning: false
-                });
-            } else {
-                this.setState({
-                    showWarning: 'integer'
-                });
-            }
+            this.setIntegerConversion(event);
         } else {
-            var reg = new RegExp('^[iIvVxXlLcCdDmM]+$|^$');
-
-            if (reg.test(event.target.value)) {
-                this.setState({
-                    showWarning: false
-                });
-
-                var result = '';
-                if (event.target.value !== '') {
-                    var result = Roman.getIntegerToRoman(
-                        event.target.value.toUpperCase()
-                    );
-                }
-
-                if (result > 3999) {
-                    this.setState({
-                        showWarning: 'roman'
-                    });
-                } else {
-                    this.setState({
-                        result,
-                        userInput: event.target.value.toUpperCase()
-                    });
-                }
-            } else {
-                this.setState({
-                    showWarning: 'roman'
-                });
-            }
+            this.setRomanConversion(event);
         }
     },
 
