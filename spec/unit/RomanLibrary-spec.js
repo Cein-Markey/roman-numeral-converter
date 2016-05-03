@@ -16,7 +16,7 @@ describe('The `Roman` numeral conversion library', function () {
     });
 
     describe('when using the `getRomanToInteger` method', function() {
-        it('should return `123` when given `CXXIII`', function() {
+        it('should return `CXXIII` when given `123`', function() {
             expect(Roman.getRomanToInteger(123)).toBe('CXXIII');
         });
 
