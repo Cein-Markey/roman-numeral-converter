@@ -21,7 +21,7 @@ class Roman {
     }
 
     /**
-     * getRomanToInteger Convert integer to Roman Numeral
+     * getRomanFromInteger Convert integer to Roman Numeral
      * @param  {Number} input User input
      * @return {String}       Calculated result
      */
@@ -41,7 +41,7 @@ class Roman {
     }
 
     /**
-     * processRomanToInteger Use recursion to calculate Roman Numeral
+     * processRomanFromInteger Use recursion to calculate Roman Numeral
      * @param  {String} input User input
      * @return {Number}       Calculated result
      */
@@ -49,23 +49,23 @@ class Roman {
         if (!input)
             return 0;
 
-        if (input.startsWith('M'))  { return 1000 + this.processRomanToInteger(input.slice(1)); }
-        if (input.startsWith('CM')) { return 900  + this.processRomanToInteger(input.slice(2)); }
-        if (input.startsWith('D'))  { return 500  + this.processRomanToInteger(input.slice(1)); }
-        if (input.startsWith('CD')) { return 400  + this.processRomanToInteger(input.slice(2)); }
-        if (input.startsWith('C'))  { return 100  + this.processRomanToInteger(input.slice(1)); }
-        if (input.startsWith('XC')) { return 90   + this.processRomanToInteger(input.slice(2)); }
-        if (input.startsWith('L'))  { return 50   + this.processRomanToInteger(input.slice(1)); }
-        if (input.startsWith('XL')) { return 40   + this.processRomanToInteger(input.slice(2)); }
-        if (input.startsWith('X'))  { return 10   + this.processRomanToInteger(input.slice(1)); }
-        if (input.startsWith('IX')) { return 9    + this.processRomanToInteger(input.slice(2)); }
-        if (input.startsWith('V'))  { return 5    + this.processRomanToInteger(input.slice(1)); }
-        if (input.startsWith('IV')) { return 4    + this.processRomanToInteger(input.slice(2)); }
-        if (input.startsWith('I'))  { return 1    + this.processRomanToInteger(input.slice(1)); }
+        if (input.startsWith('M'))  { return 1000 + this.processRomanFromInteger(input.slice(1)); }
+        if (input.startsWith('CM')) { return 900  + this.processRomanFromInteger(input.slice(2)); }
+        if (input.startsWith('D'))  { return 500  + this.processRomanFromInteger(input.slice(1)); }
+        if (input.startsWith('CD')) { return 400  + this.processRomanFromInteger(input.slice(2)); }
+        if (input.startsWith('C'))  { return 100  + this.processRomanFromInteger(input.slice(1)); }
+        if (input.startsWith('XC')) { return 90   + this.processRomanFromInteger(input.slice(2)); }
+        if (input.startsWith('L'))  { return 50   + this.processRomanFromInteger(input.slice(1)); }
+        if (input.startsWith('XL')) { return 40   + this.processRomanFromInteger(input.slice(2)); }
+        if (input.startsWith('X'))  { return 10   + this.processRomanFromInteger(input.slice(1)); }
+        if (input.startsWith('IX')) { return 9    + this.processRomanFromInteger(input.slice(2)); }
+        if (input.startsWith('V'))  { return 5    + this.processRomanFromInteger(input.slice(1)); }
+        if (input.startsWith('IV')) { return 4    + this.processRomanFromInteger(input.slice(2)); }
+        if (input.startsWith('I'))  { return 1    + this.processRomanFromInteger(input.slice(1)); }
     }
 
     /**
-     * getIntegerToRoman Abstract process into a getter
+     * getIntegerFromRoman Abstract process into a getter
      * @param  {String} input User input
      * @return {Number}       Calculated result
      */
