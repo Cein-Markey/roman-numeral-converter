@@ -24,6 +24,12 @@ Run `$ npm start` and open your favourite browser at `localhost:3000`
 * <a href="https://facebook.github.io/react/index.html">React</a>
 * <a href="http://jasmine.github.io/">Jasmine</a>
 
+##Library Use Only
+To use the raw roman library run `npm i roman-numeral-converter-mmxvi`
+
+Documentation can be found at <a href="https://github.com/Cein-Markey/roman-numeral-conversion-library">this</a> Github repo
+
+
 ##Dependencies
 <a href="https://nodejs.org/en/">Node 5.4.1</a> is needed to run the application on your local machine
 
