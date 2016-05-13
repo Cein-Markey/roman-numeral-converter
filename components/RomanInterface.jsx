@@ -41,7 +41,7 @@ var RomanForm = React.createClass({
 
             var result = '';
             if (event.target.value !== '') {
-                var result = Roman.getIntegerToRoman(
+                var result = Roman.getIntegerFromRoman(
                     event.target.value.toUpperCase()
                 );
             }
@@ -78,7 +78,7 @@ var RomanForm = React.createClass({
         ) {
             var result = '';
             if (event.target.value !== '') {
-                var result = Roman.getRomanToInteger(
+                var result = Roman.getRomanFromInteger(
                     event.target.value
                 );
             }
