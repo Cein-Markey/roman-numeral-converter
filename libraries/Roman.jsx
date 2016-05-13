@@ -25,7 +25,7 @@ class Roman {
      * @param  {Number} input User input
      * @return {String}       Calculated result
      */
-    getRomanToInteger(input = 0) {
+    getRomanFromInteger(input = 0) {
         var result = '';
 
         if (input) {
@@ -45,7 +45,7 @@ class Roman {
      * @param  {String} input User input
      * @return {Number}       Calculated result
      */
-    processRomanToInteger(input = '') {
+    processRomanFromInteger(input = '') {
         if (!input)
             return 0;
 
@@ -69,8 +69,8 @@ class Roman {
      * @param  {String} input User input
      * @return {Number}       Calculated result
      */
-    getIntegerToRoman(input = '') {
-        return this.processRomanToInteger(input);
+    getIntegerFromRoman(input = '') {
+        return this.processRomanFromInteger(input);
     }
 }
 
