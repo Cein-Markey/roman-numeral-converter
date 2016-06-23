@@ -25,7 +25,7 @@ var RomanForm = React.createClass({
     },
 
     /**
-     * `setIntegerConversion` handles this.state for
+     * `setRomanConversion` handles this.state for
      *  converting roman numerals to integers
      *
      *  @param  {event} event Used in this
