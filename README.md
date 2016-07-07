@@ -1,5 +1,5 @@
 # roman-numeral-converter
-A simple web interface built for converting integers to roman numerals and visa versa
+A simple web interface built for converting integers to roman numerals and vice versa
 
 ##Demo
 A demo of the application can be found <a href="http://roman-converter.cein.irish/" target="_blank">here</a>
